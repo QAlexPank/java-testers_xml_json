@@ -16,7 +16,6 @@ public class XmlUserDeserializer implements UserDeserializer {
         ObjectMapper objectMapper = new XmlMapper();
         File inFile = new File(inFileName);
 
- //       Collection<User> userCollection = new ArrayList<>();
         try {
             MappingIterator<User> it = objectMapper.readerFor(User.class).readValues(inFile);
             return it.readAll();

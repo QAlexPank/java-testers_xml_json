@@ -15,7 +15,6 @@ public class JsonUserDeserializer implements UserDeserializer{
         ObjectMapper objectMapper = new ObjectMapper();
         File inFile = new File(inFileName);
 
-
         try {
             MappingIterator<User> it = objectMapper.readerFor(User.class).readValues(inFile);
             return it.readAll();

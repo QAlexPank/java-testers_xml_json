@@ -17,7 +17,6 @@ public class CsvUserDeserializer implements UserDeserializer {
         CsvSchema csvSchema = CsvSchema.emptySchema().withHeader();
         File in = new File(inFileName);
 
-  //      Collection<User> userCollection = new ArrayList<>();
         try {
             MappingIterator<User> it = csvMapper.readerFor(User.class).with(csvSchema).readValues(in);
             return it.readAll();
